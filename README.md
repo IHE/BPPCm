@@ -78,4 +78,4 @@ These seem to be possible with Consent resource in R4, but not clear they are pr
 * applied obligations or refrains -- no clear place where these go in Consent
 * .class -- this is not well enough defined in Consent
 * data related to an identified data resource (e.g. all data related to this Encounter)
-* 
+* use of types of Resources -- not clear how this is useful (e.g. all Observations but not other types of Resources)
