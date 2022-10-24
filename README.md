@@ -24,13 +24,13 @@ endorsement of these scenarios.
 
 some policy URI could be defined for common consent terms. Not clear that these will be detailed enough to use in practice, but would be useful catigorization of policy types.
 
-- Explicit Opt-In (patient elects to have some information shared) is required which enables document sharing
-- Explicit Opt-Out (patient elects to not have information shared) stops all document sharing
-- Implicit Opt-In allows for document sharing
-- Explicit Opt-Out of sharing outside of use in local care events, but does allow emergency override
-- Explicit Opt-Out of sharing outside of use in local care events, but without emergency override
-- Explicit authorization captured that allows specific research project
-- Change the consent policy (change from opt-in to opt-out)
+- Explicit Permit (patient elects to have some information shared) is required which enables document sharing
+- Explicit Deny (patient elects to not have information shared) stops all document sharing
+- Implicit Permit allows for document sharing
+- Explicit Deny of sharing outside of use in local care events, but does allow emergency override
+- Explicit Deny of sharing outside of use in local care events, but without emergency override
+- Explicit Permit authorization captured that allows specific research project
+- Change the consent policy (e.g.,  change from Permit to Deny)
 
 In each of these cases the provisions of the instance of Consent could further constrain.
 
