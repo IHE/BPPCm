@@ -59,11 +59,20 @@ Authorizing or Denying access to:
 * who by a given Practitioner, CareTeam, RelatedPerson
 * why by a given Purpose Of Event codes 
   * why by a given named Research projects
-* data by Confidentiality class (Normal, but not Restricted)
-  * data by sensitivity class 
+* data by Confidentiality class (Normal, but not Restricted) -- presumes a mature SLS
+  * data by sensitivity class -- presumes a mature SLS
 * data by authoried timeframe
 * data by authorship (authored by someone in organization XYZ)
 * data by identifier (explicit reference)
 * when specific period of time data can be accessed
 
+## Not likely to be in scope
 
+These seem to be possible with Consent resource in R4, but not clear they are priority or even possible.
+
+* Use of Consent besides Privacy (consent to treat, advanced directives)
+* .action -- this is not well enough defined in Consent 
+* applied obligations or refrains -- no clear place where these go in Consent
+* .class -- this is not well enough defined in Consent
+* data related to an identified data resource (e.g. all data related to this Encounter)
+* 
