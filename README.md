@@ -1,6 +1,6 @@
 ## Proposed Scope
 
-Much like BPPC does for XDS community. This Implementation Guide (IG) would do for FHIR community. This IG could be used with MHDS, which already has some of the framework for more specific Consents, but BPPCm would be more complete than what is indicated in MHDS. This IG could also be used for organization use or community use beyond MHD/XDS, which would include use-cases like QEDm, and IPA. This would leverage BasicAudit to record access control decisions and recording of consents.
+Much like BPPC does for XDS community. This Implementation Guide (IG) would do for FHIR community. This IG could be used with MHDS, which already has some of the framework for more specific Consents, but BPPCm would be more complete than what is [indicated in MHDS](https://profiles.ihe.net/ITI/MHDS/volume-1.html#1504-mhds-overview). This IG could also be used for organization use or community use beyond MHD/XDS, which would include use-cases like QEDm, and IPA. This would leverage BasicAudit to record access control decisions and recording of consents.
 
 This IG would
 
@@ -11,6 +11,7 @@ This IG would
 
 See article - https://healthcaresecprivacy.blogspot.com/2022/05/explaining-fhir-consent-examples.html
 and - https://healthcaresecprivacy.blogspot.com/2019/11/fhir-consent-mapped-with-bppc.html
+
 
 ## Use-cases
 
@@ -23,11 +24,13 @@ endorsement of these scenarios.
 
 some policy URI could be defined for common consent terms. Not clear that these will be detailed enough to use in practice, but would be useful catigorization of policy types.
 
-* Authorize Clinical actors access appropriate for Treatment use-cases of Normal data
-* Authorize Clinical actors access appropriate for Treatment use-cases of Normal and Restricted data
-* Do NOT authorize Treatment outside the host organization without Break-Glass support
-* Do Not authorize Treatment outside the host organization with exception for Break-Glass support
-* Patient given explict consent for given PurposeOfUse to a given organization for a given timeframe (e.g. non-treatment)
+- Explicit Opt-In (patient elects to have some information shared) is required which enables document sharing
+- Explicit Opt-Out (patient elects to not have information shared) stops all document sharing
+- Implicit Opt-In allows for document sharing
+- Explicit Opt-Out of sharing outside of use in local care events, but does allow emergency override
+- Explicit Opt-Out of sharing outside of use in local care events, but without emergency override
+- Explicit authorization captured that allows specific research project
+- Change the consent policy (change from opt-in to opt-out)
 
 In each of these cases the provisions of the instance of Consent could further constrain.
 
