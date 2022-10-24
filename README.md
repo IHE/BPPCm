@@ -19,19 +19,24 @@ Consent resources for them.
 These example scenarios are provided for educational use only, they are not an 
 endorsement of these scenarios. 
 
-### Notice of Privacy Policy
+### Consent Policy 
 
-Some realms only require that the patient be given access to the organizations privacy policy. 
-In these realms the patient is not given the choice to accept, reject, or change the terms of privacy policy. 
-The expectation is that the patient can stop the engagement with the healthcare provider if they don't like the privacy policy (yes, we know this is a fallacy in many situations). 
-
-#### Consent Policy 
+some policy URI could be defined for common consent terms. Not clear that these will be detailed enough to use in practice, but would be useful catigorization of policy types.
 
 * Authorize Clinical actors access appropriate for Treatment use-cases of Normal data
 * Authorize Clinical actors access appropriate for Treatment use-cases of Normal and Restricted data
 * Do NOT authorize Treatment outside the host organization without Break-Glass support
 * Do Not authorize Treatment outside the host organization with exception for Break-Glass support
 * Patient given explict consent for given PurposeOfUse to a given organization for a given timeframe (e.g. non-treatment)
+
+In each of these cases the provisions of the instance of Consent could further constrain.
+
+### Notice of Privacy Policy
+
+Some realms only require that the patient be given access to the organizations privacy policy. 
+In these realms the patient is not given the choice to accept, reject, or change the terms of privacy policy. 
+The expectation is that the patient can stop the engagement with the healthcare provider if they don't like the privacy policy (yes, we know this is a fallacy in many situations). 
+
 
 ### Basic signed acknowledgement
 
