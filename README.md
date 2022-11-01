@@ -79,3 +79,21 @@ These seem to be possible with Consent resource in R4, but not clear they are pr
 * .class -- this is not well enough defined in Consent
 * data related to an identified data resource (e.g. all data related to this Encounter)
 * use of types of Resources -- not clear how this is useful (e.g. all Observations but not other types of Resources)
+
+## Research
+
+### Other IGs that have constrainted Consent for Privacy purposes
+
+Note that there are many IGs that have profiled Consent for Advanced Directives / Living Wills; and for Consent to treat.
+
+Data pulled from the new [FHIR Guides Stats page](http://fhir.org/guides/stats/all-profile-res-consent.html) - which is constantly being updated. (24 indications of profile on FHIR Consent)
+
+Privacy Consent:
+- [DaVinci Health Record Exchange (HRex)](https://build.fhir.org/ig/HL7/davinci-ehrx/)
+  - [HRex Consent Profile](https://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-consent.html)
+- [SDOH Clinical Care](https://build.fhir.org/ig/HL7/fhir-sdoh-clinicalcare/)
+  - [SDOHCC Consent](https://build.fhir.org/ig/HL7/fhir-sdoh-clinicalcare/StructureDefinition-SDOHCC-Consent.html) release authorization
+- Specialty Medicaiton Enrollment](https://build.fhir.org/ig/HL7/fhir-specialty-rx/)
+  - [Specialty Rx Consent](https://build.fhir.org/ig/HL7/fhir-specialty-rx/StructureDefinition-specialty-rx-consent.html)
+- [UK INTEROPen Care Connnect FHIR Profiles](https://fhir.hl7.org.uk/)
+  - [CareConnect Consent 1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Consent-1)
