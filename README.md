@@ -104,6 +104,7 @@ These seem to be possible with Consent resource in R4, but not clear they are pr
 * data related to an identified data resource (e.g. all data related to this Encounter)
 * use of types of Resources -- not clear how this is useful (e.g. all Observations but not other types of Resources)
 * Consent enforcement within an organization. We focus on Cross-Enterprise/Community access.
+* Use of FHIR Consent for XDS/XCA environments
 
 ## should these be in scope?
 
