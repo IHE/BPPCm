@@ -1,13 +1,13 @@
 # Proposed Scope
 
-Much like BPPC does for XDS community. This Implementation Guide (IG) would do for FHIR community. This IG could be used with MHDS, which already has some of the framework for more specific Consents, but BPPCm would be more complete than what is [indicated in MHDS](https://profiles.ihe.net/ITI/MHDS/volume-1.html#1504-mhds-overview). This IG could also be used for organization use or community use beyond MHD/XDS, which would include use-cases like QEDm, and IPA. This would leverage BasicAudit to record access control decisions and recording of consents.
+Much like BPPC + APPC does for XDS community. This Implementation Guide (IG) would do for FHIR community. This IG could be used with MHDS, which already has some of the framework for more specific Consents, but BPPCm would be more complete than what is [indicated in MHDS](https://profiles.ihe.net/ITI/MHDS/volume-1.html#1504-mhds-overview). This IG could also be used for organization use or community use beyond MHD/XDS, which would include use-cases like QEDm, and IPA. This would leverage BasicAudit to record access control decisions and recording of consents.
 
 This IG would
 
 1. Define a set of privacy policies with canonical URI and/or code.
 1. Define a set of Consent patterns that are foundational.
 1. Define actors for creation/update of Consent: ???? 
-   - Consent Creator actor,
+   - Consent Creator/Reader/Updater/Deleter actor,
    - Consent Registry actor, 
    - Consent Decision actor, and 
    - Consent Enforcement actor.
@@ -17,6 +17,20 @@ Much of the details are already fleshed out in these two articles:
 and 
 - [FHIR Consent mapped to BPPC -- matched to STU3](https://healthcaresecprivacy.blogspot.com/2019/11/fhir-consent-mapped-with-bppc.html)
 
+# IG Name
+
+Chosen Name - **Privacy Consent on FHIR (PCF)**
+
+**Discussed but not chosen:**
+* Basic Mobile Consent (BMC)
+* Privacy Mobile Consent (PMC)
+* Mobile Privacy Consent (MPC)
+* Privacy Consent (PC)
+* Privacy Consent for Mobile (PCM)
+* Privacy Consent for REST (PCR)
+* Privacy Consent on FHIR (PCoF)
+* Basic Advanced Privacy Consent (BAPC)
+* FHIR Privacy Consent (FPC)
 
 # Use-cases
 
@@ -27,7 +41,7 @@ endorsement of these scenarios.
 
 ## Consent Policy 
 
-some policy URI could be defined for common consent terms. Not clear that these will be detailed enough to use in practice, but would be useful catigorization of policy types.
+some policy URI could be defined for common consent terms. Not clear that these will be detailed enough to use in practice, but would be useful categorization of policy types.
 
 - Explicit Permit (patient elects to have some information shared) is required which enables document sharing
 - Explicit Deny (patient elects to not have information shared) stops all document sharing
@@ -110,7 +124,7 @@ These seem to be possible with Consent resource in R4, but not clear they are pr
 
 * Patient Privacy Preferences -- which might bring along with it a need for another actor which is in the control of the Patient and not associated with the HIE community
 * Do we need to cover policies that would constrain Document Source based on a Consent rule? This was included in XDS/BPPC, but there is no evidence that it was used.
-* Should a [Security Labeling Service](https://healthcaresecprivacy.blogspot.com/2022/09/security-labeling-service.html) be formally defined? should it be abstractly defined? It is possible to define the concept, pointing to the HL7 stuff including the soon to be published FHIR ds4p, and indicate that this is  functionality expected to apply security labels to all objects being controlled. It might apply security labels to more fine-grian (e.g. portions within a document) but the critical aspect seems to be the size of the object being controlled.
+* Should a [Security Labeling Service](https://healthcaresecprivacy.blogspot.com/2022/09/security-labeling-service.html) be formally defined? should it be abstractly defined? It is possible to define the concept, pointing to the HL7 stuff including the soon to be published FHIR ds4p, and indicate that this is  functionality expected to apply security labels to all objects being controlled. It might apply security labels to more fine-grain (e.g. portions within a document) but the critical aspect seems to be the size of the object being controlled.
 
 ## Multi-Generation Plan?
 
@@ -119,12 +133,12 @@ I suspect that everyone sees a different scope to this general problem. Consent 
 1. MHDS -- The Central MHDS Document Registry enforcing Consents, just controlling Document Consumer actor. I think this will need to call upon the new SeR to provide tokens that a distributed repository would be expected to enforce. Note that Consent would be recorded in the central FHIR server (adding a Consent Registry actor), there would not be a distributed Consent Registry. Likely one Consent per patient with rules for the whole Community.
 2. MHDS + mXDE/QEDm -- adding access rules around resources derived from Documents
 3. MHDS + XCA -- given that XCA is used to connect a MHDS community to broader network of community; then this use-case would add Consent terms for requests coming in from the outside.
-4. QEDm standalone -- this is later in the generation plan as there is no pre-defined community or terms of connection defined. However this likely is not unlike the previous, just needing the previous to be worked out fully before this is added.  This use-case bring swith it FHIR Resource based object control (prior the object to be controlled is a document)
+4. QEDm standalone -- this is later in the generation plan as there is no pre-defined community or terms of connection defined. However this likely is not unlike the previous, just needing the previous to be worked out fully before this is added.  This use-case bring switch it FHIR Resource based object control (prior the object to be controlled is a document)
 5. Residual Obligations/Refrains - same as above but there would be 'permit' provisions that require some refrain or obligation
   
 # Research
 
-## Other IGs that have constrainted Consent for Privacy purposes
+## Other IGs that have constrained Consent for Privacy purposes
 Note that there are many IGs that have profiled Consent for Advanced Directives / Living Wills; and for Consent to treat.
 
 Data pulled from the new [FHIR Guides Stats page](http://fhir.org/guides/stats/all-profile-res-consent.html) - which is constantly being updated. (24 indications of profile on FHIR Consent)
@@ -134,9 +148,9 @@ Privacy Consent:
   - [HRex Consent Profile](https://build.fhir.org/ig/HL7/davinci-ehrx/StructureDefinition-hrex-consent.html)
 - [SDOH Clinical Care](https://build.fhir.org/ig/HL7/fhir-sdoh-clinicalcare/)
   - [SDOHCC Consent](https://build.fhir.org/ig/HL7/fhir-sdoh-clinicalcare/StructureDefinition-SDOHCC-Consent.html) release authorization
-- Specialty Medicaiton Enrollment](https://build.fhir.org/ig/HL7/fhir-specialty-rx/)
+- Specialty Medication Enrollment](https://build.fhir.org/ig/HL7/fhir-specialty-rx/)
   - [Specialty Rx Consent](https://build.fhir.org/ig/HL7/fhir-specialty-rx/StructureDefinition-specialty-rx-consent.html)
-- [UK INTEROPen Care Connnect FHIR Profiles](https://fhir.hl7.org.uk/)
+- [UK INTEROPen Care Connect FHIR Profiles](https://fhir.hl7.org.uk/)
   - [CareConnect Consent 1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Consent-1)
 
 ## Other research to note
@@ -147,3 +161,4 @@ Privacy Consent:
   - [Explaining FHIR Consent examples](https://healthcaresecprivacy.blogspot.com/2022/05/explaining-fhir-consent-examples.html)
   - [FHIR Consent mapped to BPPC](https://healthcaresecprivacy.blogspot.com/2019/11/fhir-consent-mapped-with-bppc.html)
   - [Security Labeling Service](https://healthcaresecprivacy.blogspot.com/2022/09/security-labeling-service.html)
+  
